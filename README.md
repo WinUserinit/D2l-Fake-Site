@@ -33,7 +33,8 @@ ifconfig
     - Substitute bank of america URL for mycourses 
 
 
-Email me at michael.zawisza@siu.edu with questions, changes or requests
+Email me at michael.zawisza@siu.edu with questions, changes or requests.
+
 GitHub: https://github.com/WinUserinit/D2l-Fake-Site/
 
 ## License
