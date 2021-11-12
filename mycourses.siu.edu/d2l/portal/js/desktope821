@@ -1,0 +1,41 @@
+(function() { var onload = function() {D2L_PT_Auth_Portal.Load('d2l-systemcheck',D2L_PT_Auth_Portal.RenderIFrame("/d2l/systemCheck/widget",1,"System Check"));
+D2L_PT_Auth_Portal.Load('d2l-forgotpassword',D2L_PT_Auth_Portal.RenderHtmlView("<a class=\"d2l-link d2l-body-compact d2l_1_0_358\" href=\"/d2l/lp/forgotPassword/forgotPassword.d2l\">Forgot your password?</a>\r\n"));
+};
+						function poll( val, cb ) {
+							
+							var parts = val.split('.');
+							var obj = window;
+							for( var i=0; i<parts.length; i++ ) {
+								obj = obj[parts[i]];
+								if( obj === undefined ) {
+									setTimeout( function() { poll( val, cb ); }, 100 );
+									return;
+								}
+							}
+							
+							cb();
+
+						}
+
+						var s = document.getElementsByTagName('script')[0];if( typeof $ === 'undefined' ) {
+						var elem = document.createElement('script');
+						elem.type = 'text/javascript';
+						elem.src = 'https://s.brightspace.com/lib/jquery/2.2.4/jquery.min.js';
+						s.parentNode.insertBefore( elem, s );
+					}if( typeof D2L_PT_Auth_Portal === 'undefined' ) {
+							elem = document.createElement('script');
+							elem.type = 'text/javascript';
+							elem.src = '/d2l/common/js/babel/D2L.LP.Auth.Portal.js';
+							s.parentNode.insertBefore( elem, s );
+						}
+						
+						poll( '$', function() {
+							var elem = document.createElement('script');
+							elem.type = 'text/javascript';
+							elem.src = 'https://s.brightspace.com/lib/jqueryui/1.12.1/jquery-ui.min.js';
+							s.parentNode.insertBefore( elem, s );
+							poll( '$.widget', function() {
+								poll( 'D2L_PT_Auth_Portal', onload );
+							} );
+						} );
+					})();

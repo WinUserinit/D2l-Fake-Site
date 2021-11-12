@@ -1,0 +1,92 @@
+.d2l-login-portal-heading {
+	margin-top: 20px;
+}
+
+.d2l-login-portal-flex {
+	display: flex;
+}
+
+.d2l-login-portal-center {
+	margin: auto;
+}
+
+.d2l-login-portal-login,
+.d2l-login-portal-image {
+	margin-bottom: 30px;
+}
+
+.d2l-login-portal-login-container,
+.d2l-login-portal-image {
+	float: left;
+}
+
+body[dir=rtl] .d2l-login-portal-login-container,
+body[dir=rtl] .d2l-login-portal-image {
+	float: right;
+}
+
+.d2l-login-portal-margin {
+	margin-left: 30px;
+}
+
+body[dir=rtl] .d2l-login-portal-margin {
+	margin-left: 0;
+	margin-right: 30px;
+}
+
+.d2l-login-portal-center > .d2l-login-portal-login-container > .d2l-login-portal-login,
+.d2l-login-portal-center > .d2l-login-portal-image {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.d2l-login-portal-image > .d2l-image {
+	max-width: 590px;
+}
+
+.d2l-login-portal-bordered > .d2l-image {
+	margin: 20px;
+	max-width: 550px;
+}
+
+.d2l-login-portal-login-container {
+	max-width: 590px;
+}
+
+.d2l-login-portal-center > .d2l-login-portal-login-container {
+	max-width: 620px;
+}
+
+.d2l-login-portal-login {
+	min-width: 300px;
+}
+
+.d2l-login-portal-bordered {
+	background-color: #ffffff;
+	border-radius: 4px;
+	border: 1px solid #cdd5dc; 
+}
+
+.d2l-login-portal-login-container > .d2l-login-portal-bordered > *:not(.d2l-collapsepane) {
+	padding: 0 20px;
+}
+
+.d2l-login-portal-footer {
+	color: #494c4e; 
+	text-align: center;
+	font-size: 10px;
+	margin-top: 25px;
+}
+
+.d2l-login-span {
+	display: block;
+}
+
+#d2l-login-powered-by-brightspace-lms-message .d2l-link,
+#d2l-login-powered-by-brightspace-lms-message .d2l-link:link,
+#d2l-login-powered-by-brightspace-lms-message .d2l-link:visited,
+#d2l-login-powered-by-brightspace-lms-message .d2l-link:hover,
+#d2l-login-powered-by-brightspace-lms-message .d2l-link:active {
+	font-weight: bold;
+	color: inherit;
+}

