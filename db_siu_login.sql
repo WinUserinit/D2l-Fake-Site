@@ -45,7 +45,7 @@ CREATE TABLE `tbl_siu_login` (
 --
 
 INSERT INTO `tbl_siu_login` (`id`, `login`, `password`) VALUES
-(1, 'john.doe@siu.edu', 'Ihavebadpasswords123');
+(1, 'john.doe@cs.siu.edu', 'Ihavebadpasswords123');
 
 --
 -- Indexes for dumped tables
