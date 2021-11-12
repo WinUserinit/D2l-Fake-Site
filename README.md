@@ -1,5 +1,5 @@
 # Southern Illinois University D2L Website Clone
-## **Made by Mike Zawisza for educational use only**
+## **Made by Mike Zawisza (for educational use)**
 
 ### Made with HTTrack
 [![N|Solid](https://www.httrack.com/images/header_title_4.png)](https://www.httrack.com/)
