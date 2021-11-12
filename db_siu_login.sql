@@ -24,6 +24,10 @@ SET time_zone = "+00:00";
 -- Database: `db_siu_login`
 --
 
+CREATE DATABASE `db_siu_login`;
+
+USE `db_siu_login`;
+
 -- --------------------------------------------------------
 
 --
