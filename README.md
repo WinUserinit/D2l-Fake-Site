@@ -19,7 +19,7 @@
 4. Run XAMPP and start Apache and MySQL services
 5. Open your browser and go to http://127.0.0.1/phpmyadmin
 6. Import SQL script and setup MySQL database
-7. Open browser and go to http://127.0.0.1/D2l-Fake-Site-main/
+7. Open browser and go to http://127.0.0.1/D2l-Fake-Site-main/index.html
 8. Test site by navigating and inputting credentials, refresh SQL page to see credentials
 9. To access fake site on another machine, type the ip address of the host machine in the browser URL
 ```sh 
